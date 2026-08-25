@@ -6,6 +6,8 @@ dicatat di sini + README terkait diperbarui.**
 
 ## [Unreleased]
 
+## [v1.1.0] - 2026-08-26
+
 ### 2026-08-26 — Plugin v1.1.1: redirect balik ke halaman invoice yang benar
 
 - *Fixed* — Default `redirect_url` kini `/invoices/{id}` (bentuk kanonik
