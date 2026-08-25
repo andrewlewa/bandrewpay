@@ -17,7 +17,6 @@ Dynamic QRIS • Server-authoritative • HMAC-signed Webhooks • Dashboard Adm
 [![Smoke E2E](https://img.shields.io/badge/smoke%20e2e-42%2F42_pass-22c55e?style=flat-square)](#-testing--validasi)
 [![Deps](https://img.shields.io/badge/npm%20audit-0_vulnerabilities-22c55e?style=flat-square)](#-testing--validasi)
 [![License](https://img.shields.io/badge/license-Proprietary-f97316?style=flat-square)](#-lisensi)
-[![Telegram](https://img.shields.io/badge/Telegram-Chat_Owner-2CA5E0?style=flat-square&logo=telegram&logoColor=white)](https://t.me/ahmadzakiyo)
 
 </div>
 
@@ -429,6 +428,7 @@ server {
 > ke IP publik sendiri bisa gagal (hairpin NAT) sehingga create-payment error 7.
 > App ini tidak memakai React Server Actions: blokir `if ($http_next_action) { return 404; }`
 > untuk memangkas noise bot.
+
 </details>
 
 <details>

@@ -14,7 +14,9 @@ Gateway QRIS untuk Paymenter yang terhubung ke platform BandrewPay (Next.js + SQ
    - **ID Aplikasi (X-BP-Key)** — ID aplikasi (`APP-xxxx`) dari dashboard BandrewPay.
      Wajib bila Anda memakai multi-aplikasi; kosongkan untuk secret global lama.
    - **Redirect Link Setelah Bayar** — opsional. Kosongkan = otomatis ke halaman
-     invoice Paymenter. Isi jika ingin buyer diarahkan ke halaman lain.
+     invoice Paymenter. Kosongkan = kembali ke halaman invoice Paymenter
+     (`/invoices/{id}` — angka id, bukan label INV-{id}). Isi jika ingin
+     buyer diarahkan ke halaman lain.
    - **URL Paymenter** — opsional; kosongkan untuk auto-detect.
 
 ### Setup multi-aplikasi (disarankan)

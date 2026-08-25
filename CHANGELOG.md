@@ -6,6 +6,13 @@ dicatat di sini + README terkait diperbarui.**
 
 ## [Unreleased]
 
+### 2026-08-26 — Plugin v1.1.1: redirect balik ke halaman invoice yang benar
+
+- *Fixed* — Default `redirect_url` kini `/invoices/{id}` (bentuk kanonik
+  route Livewire Paymenter; binding numerik). Sebelumnya `/invoice/{id}`
+  (singular) yang tidak terdaftar -> buyer berpotensi 404 setelah hitung
+  mundur 5 detik. Label `INV-{id}` tetap tampil sebagai nomor di halaman.
+
 ### 2026-08-26 — Pulihkan CHANGELOG + dokumentasi debugging deployment
 
 - *Fixed* — CHANGELOG.md tidak sengaja tertimpa konten README plugin pada

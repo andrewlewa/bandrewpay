@@ -125,7 +125,9 @@ class BandrewPay extends Extension
             'customer_name'  => $customerName,
             'customer_email' => $customerEmail,
             'callback_url'   => $callbackUrl,
-            'redirect_url'   => $this->config('redirect_url') ?: ($paymenterBase . '/invoice/' . $invoice->id),
+            // Kanonik Paymenter: /invoices/{id} (binding numerik; "INV-{id}"
+            // hanyalah label number di dalam halaman).
+            'redirect_url'   => $this->config('redirect_url') ?: ($paymenterBase . '/invoices/' . $invoice->id),
         ], JSON_UNESCAPED_SLASHES);
 
         if ($body === false) {
