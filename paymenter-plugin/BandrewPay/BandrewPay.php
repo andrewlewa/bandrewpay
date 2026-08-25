@@ -146,8 +146,12 @@ class BandrewPay extends Extension
 
         try {
             $client   = new Client(['timeout' => 15, 'connect_timeout' => 5]);
+            // KRITIS: kirim $body APA ADANYA (bukan opsi 'json') — byte yang
+            // dikirim HARUS identik dengan byte yang di-hash di signHeaders().
+            // Opsi 'json' membuat Guzzle encode ulang tanpa
+            // JSON_UNESCAPED_SLASHES sehingga "/" jadi "\/" -> signature tolak.
             $response = $client->post($gatewayUrl . '/api/v1/payments', [
-                'json'    => json_decode($body, true),
+                'body'    => $body,
                 'headers' => $headers,
             ]);
             $data = json_decode($response->getBody()->getContents(), true);

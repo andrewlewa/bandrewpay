@@ -1,4 +1,4 @@
-# BandrewPay — Paymenter Extension (v1.1.1)
+# BandrewPay — Paymenter Extension (v1.1.0)
 
 Gateway QRIS untuk Paymenter yang terhubung ke platform BandrewPay (Next.js + SQLite).
 
