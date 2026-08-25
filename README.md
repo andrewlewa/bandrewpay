@@ -26,7 +26,7 @@ Dynamic QRIS • Server-authoritative • HMAC-signed Webhooks • Dashboard Adm
 > ### 🎯 Kenapa BandrewPay ada?
 >
 > Gateway QRIS lama berbasis Express menyimpan **semua state di memori** — restart
-> server = jendela *double-payment* terbuka, token merchant telanjang di file
+> server = jendela _double-payment_ terbuka, token merchant telanjang di file
 > plaintext, dan tidak ada callback sama sekali.
 >
 > BandrewPay adalah **rebuild total**: setiap kelemahan lama dianalisis, dipetakan
@@ -59,21 +59,21 @@ Dynamic QRIS • Server-authoritative • HMAC-signed Webhooks • Dashboard Adm
 
 ## ✨ Fitur Utama
 
-| | Fitur | Detail |
-|---|---|---|
-| 💳 | **QRIS Dinamis EMVCo** | Payload dibangun lokal (TLV + CRC16), nominal fleksibel, checksum tervalidasi. PNG dirender *on-the-fly* dari DB — nol file QRIS di filesystem, nol kiriman payload ke layanan QR pihak ketiga |
-| 🔢 | **Kode Unik Nominal** | Setiap transaksi aktif dapat `payable_amount` unik (+1..100). Dua QRIS aktif **tidak pernah** bernominal sama → mustahil saling klaim di upstream |
-| 🛡️ | **Anti Double-Payment** | Claim ledger persisten di SQLite — restart server **tidak** membuka jendela double-delivery. Transisi status memakai compare-and-set (CAS) dalam satu DB transaction |
-| 📡 | **Webhook Tersigning** | Callback keluar dengan `HMAC-SHA256(timestamp.nonce.sha256(body))`, window ±5 menit, nonce anti-replay, dedup via `event_id`, retry backoff otomatis (outbox pattern) |
-| 👁️ | **Monitoring Lease-Based** | 100 viewer membuka QR yang sama = **tetap 1 poller** ke provider. Browser tidak pernah memanggil provider langsung — pelindung utama dari ban akun merchant |
-| 🎬 | **Halaman Bayar Sinematik** | Glassmorphism premium: aurora background, kartu 3D tilt, QRIS bercahaya dengan scan aura, centang sukses teranimasi — plus hitung mundur 5 detik sebelum redirect ke toko |
-| ⏱️ | **Countdown Server-Authoritative** | `expires_at` disimpan UTC di DB. Jam browser dimanipulasi sekalipun → tidak berefek apa pun |
-| 🗄️ | **SQLite Tanpa ORM** | Skema relasional penuh: FK, partial unique index, prepared statements 100%. Satu file `gateway.db` chmod 600 |
-| 🎛️ | **Dashboard Admin Premium** | Glassmorphism halus + Material Design 3: overview, transaksi, callback log, audit log, DB browser aman, pengaturan runtime live-reload |
-| 🔑 | **Multi-Aplikasi** | Daftarkan satu aplikasi per platform toko (`APP-xxxx`) — secret sendiri, callback & redirect default sendiri. Toko A tak bisa memvalidasi callback milik toko B |
-| 🔒 | **Auth Berlapis** | scrypt + sesi DB + cookie HttpOnly/SameSite, CSRF double-submit, CSP nonce ketat, rate limit, kunci akun, dan **auto-blokir IP permanen** setelah 3 gagal login |
-| 🔄 | **Sesi GoBiz Tanpa File** | Login OTP langsung dari dashboard, sesi tersimpan di SQLite, auto-refresh 6 jam restart-safe, rate-limit OTP 3×/15 menit |
-| ⚙️ | **Konfigurasi Live** | Semua setting bisa diubah dari dashboard (**settings DB > env > default**) — interval monitor dibaca ulang tiap siklus, perubahan berlaku tanpa restart |
+|     | Fitur                              | Detail                                                                                                                                                                                         |
+| --- | ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 💳  | **QRIS Dinamis EMVCo**             | Payload dibangun lokal (TLV + CRC16), nominal fleksibel, checksum tervalidasi. PNG dirender _on-the-fly_ dari DB — nol file QRIS di filesystem, nol kiriman payload ke layanan QR pihak ketiga |
+| 🔢  | **Kode Unik Nominal**              | Setiap transaksi aktif dapat `payable_amount` unik (+1..100). Dua QRIS aktif **tidak pernah** bernominal sama → mustahil saling klaim di upstream                                              |
+| 🛡️  | **Anti Double-Payment**            | Claim ledger persisten di SQLite — restart server **tidak** membuka jendela double-delivery. Transisi status memakai compare-and-set (CAS) dalam satu DB transaction                           |
+| 📡  | **Webhook Tersigning**             | Callback keluar dengan `HMAC-SHA256(timestamp.nonce.sha256(body))`, window ±5 menit, nonce anti-replay, dedup via `event_id`, retry backoff otomatis (outbox pattern)                          |
+| 👁️  | **Monitoring Lease-Based**         | 100 viewer membuka QR yang sama = **tetap 1 poller** ke provider. Browser tidak pernah memanggil provider langsung — pelindung utama dari ban akun merchant                                    |
+| 🎬  | **Halaman Bayar Sinematik**        | Glassmorphism premium: aurora background, kartu 3D tilt, QRIS bercahaya dengan scan aura, centang sukses teranimasi — plus hitung mundur 5 detik sebelum redirect ke toko                      |
+| ⏱️  | **Countdown Server-Authoritative** | `expires_at` disimpan UTC di DB. Jam browser dimanipulasi sekalipun → tidak berefek apa pun                                                                                                    |
+| 🗄️  | **SQLite Tanpa ORM**               | Skema relasional penuh: FK, partial unique index, prepared statements 100%. Satu file `gateway.db` chmod 600                                                                                   |
+| 🎛️  | **Dashboard Admin Premium**        | Glassmorphism halus + Material Design 3: overview, transaksi, callback log, audit log, DB browser aman, pengaturan runtime live-reload                                                         |
+| 🔑  | **Multi-Aplikasi**                 | Daftarkan satu aplikasi per platform toko (`APP-xxxx`) — secret sendiri, callback & redirect default sendiri. Toko A tak bisa memvalidasi callback milik toko B                                |
+| 🔒  | **Auth Berlapis**                  | scrypt + sesi DB + cookie HttpOnly/SameSite, CSRF double-submit, CSP nonce ketat, rate limit, kunci akun, dan **auto-blokir IP permanen** setelah 3 gagal login                                |
+| 🔄  | **Sesi GoBiz Tanpa File**          | Login OTP langsung dari dashboard, sesi tersimpan di SQLite, auto-refresh 6 jam restart-safe, rate-limit OTP 3×/15 menit                                                                       |
+| ⚙️  | **Konfigurasi Live**               | Semua setting bisa diubah dari dashboard (**settings DB > env > default**) — interval monitor dibaca ulang tiap siklus, perubahan berlaku tanpa restart                                        |
 
 ---
 
@@ -148,18 +148,18 @@ sequenceDiagram
 
 ## 🔐 Model Keamanan
 
-| Ancaman | Mitigasi |
-|---|---|
-| Replay request integrasi | Timestamp ±5 menit + nonce unik tersimpan + HMAC atas `ts.bodyHash` |
-| Webhook palsu ke toko | Signature per-event + timestamp + `event_id` untuk dedup di sisi toko |
-| Double fulfillment | Idempotensi create (partial unique index) + claim persisten + CAS status + dedup callback |
-| Brute force login admin | Rate limit per-IP → lockout akun → **blokir IP permanen otomatis** (3 gagal berturut-turut), dikelola di Admin › Keamanan |
-| Password bocor via URL | Form login **selalu POST** — fallback native urlencoded → redirect 303, tidak pernah GET |
-| XSS / CSRF di area admin | React escaping + CSP strict nonce + cookie SameSite=Lax + CSRF double-submit untuk semua mutation API |
-| SQL injection | 100% prepared statements, tanpa string concatenation |
-| IDOR pembeli | Halaman bayar publik by-design (kuitansi) — hanya expose field aman; artifact QR terikat transaksinya |
-| Secret leak | Env server-only tervalidasi zod, tanpa `NEXT_PUBLIC_*` rahasia, log tersanitasi, DB browser menyembunyikan hash & secret |
-| Token merchant plaintext | Sesi GoBiz hidup di SQLite (chmod 600), tak pernah dikirim ke klien/log |
+| Ancaman                  | Mitigasi                                                                                                                  |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------- |
+| Replay request integrasi | Timestamp ±5 menit + nonce unik tersimpan + HMAC atas `ts.bodyHash`                                                       |
+| Webhook palsu ke toko    | Signature per-event + timestamp + `event_id` untuk dedup di sisi toko                                                     |
+| Double fulfillment       | Idempotensi create (partial unique index) + claim persisten + CAS status + dedup callback                                 |
+| Brute force login admin  | Rate limit per-IP → lockout akun → **blokir IP permanen otomatis** (3 gagal berturut-turut), dikelola di Admin › Keamanan |
+| Password bocor via URL   | Form login **selalu POST** — fallback native urlencoded → redirect 303, tidak pernah GET                                  |
+| XSS / CSRF di area admin | React escaping + CSP strict nonce + cookie SameSite=Lax + CSRF double-submit untuk semua mutation API                     |
+| SQL injection            | 100% prepared statements, tanpa string concatenation                                                                      |
+| IDOR pembeli             | Halaman bayar publik by-design (kuitansi) — hanya expose field aman; artifact QR terikat transaksinya                     |
+| Secret leak              | Env server-only tervalidasi zod, tanpa `NEXT_PUBLIC_*` rahasia, log tersanitasi, DB browser menyembunyikan hash & secret  |
+| Token merchant plaintext | Sesi GoBiz hidup di SQLite (chmod 600), tak pernah dikirim ke klien/log                                                   |
 
 <details>
 <summary><b>📐 Rumus signature integrasi (HMAC v2)</b></summary>
@@ -172,6 +172,7 @@ X-BP-Key:       APP-xxxx   ← opsional; secret per-aplikasi (multi-toko)
 ```
 
 Tanpa `X-BP-Key`, request diverifikasi dengan secret global (fallback kompatibilitas).
+
 </details>
 
 ---
@@ -198,7 +199,7 @@ npm run dev          # http://localhost:4100
 ```
 
 Login dashboard pertama memakai `ADMIN_USERNAME` / `ADMIN_PASSWORD` dari `.env`
-— **segera ganti password** dari *Admin › Pengaturan* setelah masuk.
+— **segera ganti password** dari _Admin › Pengaturan_ setelah masuk.
 
 **Punya sesi gateway lama?** Impor sekali, tanpa OTP ulang:
 
@@ -208,16 +209,16 @@ npm run import-session -- /path/ke/.GOPAY_SESI_JANGAN_DIHAPUS.json
 
 Perintah lengkap:
 
-| Perintah | Fungsi |
-|---|---|
-| `npm run dev` | Dev server di `:4100` |
-| `npm run build && npm start` | Production build + serve `:4100` |
-| `npm test` | Unit test (37 assertions) |
-| `npm run smoke` | E2E penuh: build + boot `:4199` + webhook receiver `:4210` (42 checks) |
-| `npm run db:migrate` | Terapkan migrasi `src/db/schema.*.sql` |
-| `npm run seed` | Seed admin awal (hanya saat DB kosong) |
-| `npm run import-session` | Bootstrap sesi GoBiz dari file legacy |
-| `npm run audit:deps` | Audit kerentanan dependency + cek outdated |
+| Perintah                     | Fungsi                                                                 |
+| ---------------------------- | ---------------------------------------------------------------------- |
+| `npm run dev`                | Dev server di `:4100`                                                  |
+| `npm run build && npm start` | Production build + serve `:4100`                                       |
+| `npm test`                   | Unit test (37 assertions)                                              |
+| `npm run smoke`              | E2E penuh: build + boot `:4199` + webhook receiver `:4210` (42 checks) |
+| `npm run db:migrate`         | Terapkan migrasi `src/db/schema.*.sql`                                 |
+| `npm run seed`               | Seed admin awal (hanya saat DB kosong)                                 |
+| `npm run import-session`     | Bootstrap sesi GoBiz dari file legacy                                  |
+| `npm run audit:deps`         | Audit kerentanan dependency + cek outdated                             |
 
 ---
 
@@ -225,22 +226,22 @@ Perintah lengkap:
 
 > **Urutan prioritas: Settings DB › env › default.**
 > Semua kunci di bawah (kecuali `DATABASE_PATH` & `GOPAY_SESSION_FILE`) bisa
-> dioverride dari *Admin › Pengaturan*, berlaku **tanpa restart**.
+> dioverride dari _Admin › Pengaturan_, berlaku **tanpa restart**.
 
-| Variabel | Default | Keterangan |
-|---|---|---|
-| `APP_URL` | `http://localhost:4100` | Base URL publik — dipakai menyusun `payment_url` |
-| `SESSION_SECRET` | — | Secret penanda tangan sesi admin (min 32 karakter acak) |
-| `INTEGRATION_SECRET` | — | Secret integrasi global (fallback); cara resmi: daftar aplikasi di dashboard |
-| `ADMIN_USERNAME` / `ADMIN_PASSWORD` | — | Hanya dipakai `npm run seed` |
-| `DATABASE_PATH` | `./data/gateway.db` | Lokasi SQLite — **env-only**, tak bisa via dashboard |
-| `GOPAY_MERCHANT_ID` | — | ID merchant GoFood Merchant |
-| `GOPAY_SESSION_FILE` | `../.GOPAY_SESI_JANGAN_DIHAPUS.json` | Sumber bootstrap impor sekali — **env-only** |
-| `QRIS_STATIC` | — | Template QRIS statis EMVCo (checksum divalidasi; juga bisa via dashboard) |
-| `PAYMENT_TTL_SECONDS` | `300` | Umur transaksi (30..86400) |
-| `MONITOR_POLL_INTERVAL_MS` | `8000` | Interval poll provider — **jangan diturunkan** (anti-ban) |
-| `MONITOR_VIEWER_LEASE_MS` | `25000` | Masa hidup lease viewer |
-| `CALLBACK_TIMEOUT_MS` | `10000` | Timeout pengiriman webhook |
+| Variabel                            | Default                              | Keterangan                                                                   |
+| ----------------------------------- | ------------------------------------ | ---------------------------------------------------------------------------- |
+| `APP_URL`                           | `http://localhost:4100`              | Base URL publik — dipakai menyusun `payment_url`                             |
+| `SESSION_SECRET`                    | —                                    | Secret penanda tangan sesi admin (min 32 karakter acak)                      |
+| `INTEGRATION_SECRET`                | —                                    | Secret integrasi global (fallback); cara resmi: daftar aplikasi di dashboard |
+| `ADMIN_USERNAME` / `ADMIN_PASSWORD` | —                                    | Hanya dipakai `npm run seed`                                                 |
+| `DATABASE_PATH`                     | `./data/gateway.db`                  | Lokasi SQLite — **env-only**, tak bisa via dashboard                         |
+| `GOPAY_MERCHANT_ID`                 | —                                    | ID merchant GoFood Merchant                                                  |
+| `GOPAY_SESSION_FILE`                | `../.GOPAY_SESI_JANGAN_DIHAPUS.json` | Sumber bootstrap impor sekali — **env-only**                                 |
+| `QRIS_STATIC`                       | —                                    | Template QRIS statis EMVCo (checksum divalidasi; juga bisa via dashboard)    |
+| `PAYMENT_TTL_SECONDS`               | `300`                                | Umur transaksi (30..86400)                                                   |
+| `MONITOR_POLL_INTERVAL_MS`          | `8000`                               | Interval poll provider — **jangan diturunkan** (anti-ban)                    |
+| `MONITOR_VIEWER_LEASE_MS`           | `25000`                              | Masa hidup lease viewer                                                      |
+| `CALLBACK_TIMEOUT_MS`               | `10000`                              | Timeout pengiriman webhook                                                   |
 
 ---
 
@@ -295,14 +296,14 @@ GET /api/v1/payments/{transaction_id}     ← header HMAC identik
 
 ### Endpoint Lainnya
 
-| Endpoint | Auth | Fungsi |
-|---|---|---|
-| `GET /pay/{trxId}` | publik | Halaman bayar pembeli |
-| `GET /api/pay/{id}/qr.png` | publik | Gambar QRIS dirender on-the-fly |
-| `GET /api/payments/{id}/status` | publik | Status + `server_now_ms` untuk koreksi countdown |
-| `POST /api/payments/watch` | publik | Heartbeat lease viewer |
-| `GET /api/health` | publik | Health check (untuk proxy/WAF uptime) |
-| `/api/admin/*` | sesi + CSRF | Dashboard API (login, settings, apps, provider, security, db-browser) |
+| Endpoint                        | Auth        | Fungsi                                                                |
+| ------------------------------- | ----------- | --------------------------------------------------------------------- |
+| `GET /pay/{trxId}`              | publik      | Halaman bayar pembeli                                                 |
+| `GET /api/pay/{id}/qr.png`      | publik      | Gambar QRIS dirender on-the-fly                                       |
+| `GET /api/payments/{id}/status` | publik      | Status + `server_now_ms` untuk koreksi countdown                      |
+| `POST /api/payments/watch`      | publik      | Heartbeat lease viewer                                                |
+| `GET /api/health`               | publik      | Health check (untuk proxy/WAF uptime)                                 |
+| `/api/admin/*`                  | sesi + CSRF | Dashboard API (login, settings, apps, provider, security, db-browser) |
 
 ### Webhook Keluar (ke toko)
 
@@ -314,7 +315,7 @@ X-BP-Timestamp / X-BP-Nonce / X-BP-Signature
   "status": "paid", "amount": 50000, "paid_at": "..." }
 ```
 
-Gagal dikirim? Outbox mencoba ulang dengan backoff — terpantau di *Admin › Callback*.
+Gagal dikirim? Outbox mencoba ulang dengan backoff — terpantau di _Admin › Callback_.
 
 ---
 
@@ -326,13 +327,13 @@ Official extension di [`paymenter-plugin/BandrewPay/`](paymenter-plugin/BandrewP
 2. Aktifkan **BandrewPay** dari admin Paymenter → Extensions.
 3. Isi konfigurasi:
 
-| Field | Keterangan |
-|---|---|
-| URL Gateway BandrewPay | Base URL platform (mis. `https://pay.domainmu.com`) |
-| Integration Secret | Secret aplikasi dari *BandrewPay › Aplikasi* (disarankan), min 32 karakter |
-| ID Aplikasi (X-BP-Key) | `APP-xxxx` untuk multi-aplikasi; kosongkan untuk secret global lama |
-| Redirect Link Setelah Bayar | Opsional — kosong = otomatis ke invoice Paymenter |
-| URL Paymenter | Opsional — kosong untuk auto-detect |
+| Field                       | Keterangan                                                                 |
+| --------------------------- | -------------------------------------------------------------------------- |
+| URL Gateway BandrewPay      | Base URL platform (mis. `https://pay.domainmu.com`)                        |
+| Integration Secret          | Secret aplikasi dari _BandrewPay › Aplikasi_ (disarankan), min 32 karakter |
+| ID Aplikasi (X-BP-Key)      | `APP-xxxx` untuk multi-aplikasi; kosongkan untuk secret global lama        |
+| Redirect Link Setelah Bayar | Opsional — kosong = otomatis ke invoice Paymenter                          |
+| URL Paymenter               | Opsional — kosong untuk auto-detect                                        |
 
 Alur: invoice dibuat → plugin POST create (signed) → buyer dibuka `payment_url` →
 terdeteksi paid → webhook signed menandai invoice lunas. Detail lengkap di
@@ -342,17 +343,17 @@ terdeteksi paid → webhook signed menandai invoice lunas. Detail lengkap di
 
 ## 🎛️ Dashboard Admin
 
-| Halaman | Fungsi |
-|---|---|
-| **Overview** | Statistik ringkas + status sistem |
-| **Transaksi** | Daftar + filter, detail per-transaksi dengan timeline event append-only, aksi admin |
-| **Callback** | Log pengiriman webhook + status retry outbox |
-| **Database** | Browser entri DB yang aman (hash password & secret tidak pernah ikut ter-serialize) |
-| **Pembayaran Baru** | Buat transaksi manual dari dashboard |
-| **Sesi GoPay** | Login OTP merchant, refresh token manual, status auto-refresh |
-| **Aplikasi** | CRUD aplikasi integrasi multi-toko — secret tampil **sekali** saat dibuat/dirotasi |
-| **Keamanan** | Blokir IP manual/permanen, daftar blokir otomatis, buka blokir |
-| **Pengaturan** | Semua konfigurasi runtime + sumber nilainya (settings/env/default) + ganti password |
+| Halaman             | Fungsi                                                                              |
+| ------------------- | ----------------------------------------------------------------------------------- |
+| **Overview**        | Statistik ringkas + status sistem                                                   |
+| **Transaksi**       | Daftar + filter, detail per-transaksi dengan timeline event append-only, aksi admin |
+| **Callback**        | Log pengiriman webhook + status retry outbox                                        |
+| **Database**        | Browser entri DB yang aman (hash password & secret tidak pernah ikut ter-serialize) |
+| **Pembayaran Baru** | Buat transaksi manual dari dashboard                                                |
+| **Sesi GoPay**      | Login OTP merchant, refresh token manual, status auto-refresh                       |
+| **Aplikasi**        | CRUD aplikasi integrasi multi-toko — secret tampil **sekali** saat dibuat/dirotasi  |
+| **Keamanan**        | Blokir IP manual/permanen, daftar blokir otomatis, buka blokir                      |
+| **Pengaturan**      | Semua konfigurasi runtime + sumber nilainya (settings/env/default) + ganti password |
 
 ---
 
@@ -389,6 +390,7 @@ location / {
     proxy_set_header X-Forwarded-Proto $scheme;
 }
 ```
+
 </details>
 
 <details>
@@ -406,10 +408,11 @@ docker run -d --name bandrewpay \
 
 cPanel: buat Node.js App, startup `node_modules/next/dist/bin/next` dengan argumen
 `start`, atau pakai custom wrapper script. CloudLinux wajib Node ≥ 18.
+
 </details>
 
 **Checklist go-live:** ganti semua `CHANGE_ME_*` ✓ · HTTPS di proxy ✓ ·
-`APP_URL` = domain publik ✓ · login OTP merchant via *Sesi GoPay* ✓ ·
+`APP_URL` = domain publik ✓ · login OTP merchant via _Sesi GoPay_ ✓ ·
 ganti password admin ✓ · `npm run smoke` hijau sebelum & sesudah deploy ✓
 
 Kompatibilitas WAF/reverse-proxy: app hanya butuh header standar
@@ -454,17 +457,6 @@ tanpa WebSocket; timeout outbound dibatasi sehingga tidak menggantung proxy.
 - [ ] Ekspor laporan transaksi (CSV)
 - [ ] Mode multi-instance (koordinasi lease lintas mesin)
 - [ ] Halaman status publik (uptime + insiden)
-
----
-
-## 💬 Kontak & Komunitas
-
-<div align="center">
-
-[![Telegram Owner](https://img.shields.io/badge/Telegram-Chat_Owner-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/ahmadzakiyo)
-[![Telegram Channel](https://img.shields.io/badge/Telegram-Channel_Updates-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/nuxysproject)
-
-</div>
 
 ---
 
