@@ -394,6 +394,44 @@ location / {
 </details>
 
 <details>
+<summary><b>Nginx vhost produksi (hardened, multi-app safe)</b></summary>
+
+```nginx
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    http2 on;                       # nginx >= 1.25 (bukan "listen ... http2")
+    server_name pay.domainmu.com;
+
+    ssl_certificate     /etc/letsencrypt/live/pay.domainmu.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/pay.domainmu.com/privkey.pem;
+    include             /etc/letsencrypt/options-ssl-nginx.conf;  # JANGAN duplikasi direktif SSL
+    ssl_dhparam         /etc/letsencrypt/ssl-dhparams.pem;
+
+    add_header Strict-Transport-Security "max-age=15552000" always;
+    server_tokens off;
+    client_max_body_size 10m;
+
+    location ^~ /.well-known/acme-challenge/ { root /var/www/html; }
+    location / {
+        proxy_pass http://127.0.0.1:4100;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;   # wajib: cookie Secure & CSP adaptif
+        proxy_http_version 1.1;
+    }
+}
+```
+
+> **Gateway & billing satu server?** Tambahkan `127.0.0.1 pay.domainmu.com`
+> (dan domain billing) di `/etc/hosts` server — tanpa ini, panggilan internal
+> ke IP publik sendiri bisa gagal (hairpin NAT) sehingga create-payment error 7.
+> App ini tidak memakai React Server Actions: blokir `if ($http_next_action) { return 404; }`
+> untuk memangkas noise bot.
+</details>
+
+<details>
 <summary><b>PM2 / Docker / cPanel</b></summary>
 
 ```bash

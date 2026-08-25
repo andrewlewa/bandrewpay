@@ -1,4 +1,4 @@
-# BandrewPay — Paymenter Extension (v1.1.0)
+# BandrewPay — Paymenter Extension (v1.1.1)
 
 Gateway QRIS untuk Paymenter yang terhubung ke platform BandrewPay (Next.js + SQLite).
 
@@ -34,6 +34,14 @@ Invoice dibuat → pay() POST {gateway}/api/v1/payments  (HMAC v2 headers + X-BP
 Pembayaran terdeteksi koordinator → invoice paid via callback:
 POST {paymenter}/extensions/bandrewpay/webhook (HMAC v2 + timestamp + nonce)
 ```
+
+## Troubleshooting
+
+| Gejala | Penyebab & Solusi |
+|---|---|
+| `cURL error 7: Failed to connect` saat bayar, padahal gateway online dari luar | **Hairpin NAT**: Paymenter & gateway di server yang sama, domain publik tak terjangkau dari dalam. Tambahkan di `/etc/hosts` server: `127.0.0.1 pay.domainmu.com dashboard.domainmu.com` |
+| Gateway menolak `"signature tidak cocok"` | Pastikan plugin **v1.1.1+** (bug encode body lama) dan nilai *Integration Secret* identik dengan secret aplikasi di BandrewPay › Aplikasi (tanpa spasi/baris baru). Isi juga *ID Aplikasi (X-BP-Key)* |
+| Invoice lunas tapi status web tidak update | Cek callback URL transaksi menunjuk ke domain Paymenter yang benar; isi config **URL Paymenter** eksplisit agar callback selalu tepat |
 
 ## Keamanan webhook
 
