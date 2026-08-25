@@ -1,0 +1,14 @@
+node_modules/
+.next/
+data/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+.env
+.env.local
+.env.production
+tsconfig.tsbuildinfo
+next-env.d.ts
+.GOPAY_SESI_JANGAN_DIHAPUS.json
+.gopay_cache.json

@@ -1,0 +1,148 @@
+# =============================================================================
+# BandrewPay / GoPay Merchant Gateway - .gitignore (security-hardened)
+# -----------------------------------------------------------------------------
+# Prinsip:
+#   1. SECRET TIDAK PERNAH masuk git (.env, sesi/token GoBiz, kunci, cache).
+#   2. DATABASE & artefak runtime tidak masuk git (berisi token + data pelanggan).
+#   3. Migrasi SQL TETAP di-track (platform/src/db/schema.*.sql) - jangan pakai
+#      pola "*.sql" mentah!
+#   4. Pola berlaku di SEMUA kedalaman kecuali diberi awalan "/".
+# =============================================================================
+
+# --- 1. Environment & secret files (semua level direktori) -------------------
+.env
+.env.*
+!.env.example
+.env.local
+*.env
+!*.env.example
+
+# File konfigurasi package manager yang bisa menyimpan auth token
+.npmrc
+.yarnrc
+.yarnrc.yml
+
+# --- 2. Sesi & token gateway (GoBiz/Gopay) ----------------------------------
+.GOPAY_SESI_JANGAN_DIHAPUS.json
+**/*SESI_JANGAN_DIHAPUS*
+.gopay_cache.json
+**/*gopay*cache*.json
+**/provider_session*
+**/*legacy-session*.json
+**/*session-import*.json
+
+# --- 3. Database SQLite & sidecar (WAL/journal/SHM) --------------------------
+# platform/data/ berisi gateway.db: transaksi, hash password, secret aplikasi,
+# dan provider session. SELURUH folder harus keluar dari git.
+platform/data/
+data/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite3
+
+# --- 4. Kunci privat & sertifikat --------------------------------------------
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+id_ecdsa
+id_dsa
+
+# --- 5. Dump/backup database (HATI-HATI: jangan blokir migrasi schema.*..sql!)
+backup*.sql
+*backup*.sql
+dump.sql
+*.dump.sql
+*.dump
+*.sql.gz
+*.bak.sql
+
+# --- 6. Log, temp, cache runtime ---------------------------------------------
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+tmp/
+.temp/
+*.tmp
+.cache/
+
+# --- 7. Dependencies & artefak build -----------------------------------------
+node_modules/
+.next/
+out/
+build/
+dist/
+coverage/
+.nyc_output/
+*.lcov
+*.tsbuildinfo
+.turbo/
+.vercel/
+.parcel-cache/
+
+# --- 8. OS junk ----------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# --- 9. Editor / IDE ----------------------------------------------------------
+.idea/
+.vscode/
+.history/
+*.swp
+*.swo
+*~
+*.sublime-workspace
+*.sublime-project
+
+# --- 10. Khusus project ini ---------------------------------------------------
+# Folder sampah lokal - tidak untuk dibagikan
+trash/
+# Output obfuscator legacy
+*.raw.js
+obfuscate.js
+# Override compose sering dipakai utk menaruh secret lokal
+docker-compose.override.yml
+docker-compose.*.local.yml
+# Folder secret manual
+secrets/
+opencode.json
+reference/
+
+# --- 11. State lokal AI tools (selain .opencode yang memang disengaja) --------
+.claude/
+.windsurf/
+.aider*
+.continue/
+.opencode/
+AGENT.md
+Payment-ui/
+
+# --- 12. Catatan --------------------------------------------------------------
+# sengaja TIDAK di-ignore:
+#   .env.example        -> template config, bebas secret
+#   platform/src/db/schema.*.sql -> migrasi database (WAJIB ter-track)
+#   package-lock.json   -> integrity dependency
+#   next-env.d.ts       -> bagian normal project Next.js
+#   .opencode/skills/   -> dokumentasi agent (aset project)
