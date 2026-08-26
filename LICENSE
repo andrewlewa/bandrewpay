@@ -1,1173 +1,786 @@
-# SOFTWARE LICENSE AGREEMENT
+SOFTWARE LICENSE AGREEMENT
+Version: 1.0
+Effective Date: 26 August 2026
+Licensor: BandrewPay / BandrewCloud
+Software: BandrewPay - Payemnt gateway
+License Type: Proprietary — Restricted, Non-Transferable, Non-Sublicensable
+IMPORTANT — READ CAREFULLY
+THIS LICENSE AGREEMENT (“AGREEMENT”) IS A LEGALLY BINDING AGREEMENT BETWEEN THE LICENSOR AND THE PERSON OR LEGAL ENTITY OBTAINING, INSTALLING, ACCESSING, OR USING THE SOFTWARE.
+BY INSTALLING, ACCESSING, ACTIVATING, COPYING, EXECUTING, OR OTHERWISE USING THE SOFTWARE, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND AGREED TO BE BOUND BY THIS AGREEMENT.
+IF YOU DO NOT AGREE TO EVERY PROVISION OF THIS AGREEMENT, YOU MUST NOT INSTALL, ACTIVATE, ACCESS, COPY, EXECUTE, MODIFY, DISTRIBUTE, OR USE THE SOFTWARE.
 
-**Version:** 1.0
-
-**Effective Date:** 26 August 2026
-
-**Licensor:** BandrewPay / BandrewCloud
-
-**Software:** BandrewPay - Payemnt gateway
-
-**License Type:** Proprietary — Restricted, Non-Transferable, Non-Sublicensable
-
-> **IMPORTANT — READ CAREFULLY**
->
-> THIS LICENSE AGREEMENT (“AGREEMENT”) IS A LEGALLY BINDING AGREEMENT BETWEEN THE LICENSOR AND THE PERSON OR LEGAL ENTITY OBTAINING, INSTALLING, ACCESSING, OR USING THE SOFTWARE.
->
-> BY INSTALLING, ACCESSING, ACTIVATING, COPYING, EXECUTING, OR OTHERWISE USING THE SOFTWARE, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND AGREED TO BE BOUND BY THIS AGREEMENT.
->
-> IF YOU DO NOT AGREE TO EVERY PROVISION OF THIS AGREEMENT, YOU MUST NOT INSTALL, ACTIVATE, ACCESS, COPY, EXECUTE, MODIFY, DISTRIBUTE, OR USE THE SOFTWARE.
-
----
-
-## 1. DEFINITIONS
-
+1. DEFINITIONS
 For purposes of this Agreement:
-
-### 1.1 “Software”
-
+1.1 “Software”
 “Software” means the proprietary software product identified above, including all:
-
-- binaries;
-- executables;
-- source code;
-- object code;
-- libraries;
-- modules;
-- plugins;
-- APIs;
-- SDKs;
-- interfaces;
-- configuration files;
-- scripts;
-- documentation;
-- databases;
-- assets;
-- user interfaces;
-- algorithms;
-- models;
-- authentication mechanisms;
-- license-management components;
-- updates;
-- patches;
-- upgrades;
-- security mechanisms;
-- associated services; and
-- any component or derivative supplied by or on behalf of the Licensor.
-
-### 1.2 “Licensor”
-
+    • binaries;
+    • executables;
+    • source code;
+    • object code;
+    • libraries;
+    • modules;
+    • plugins;
+    • APIs;
+    • SDKs;
+    • interfaces;
+    • configuration files;
+    • scripts;
+    • documentation;
+    • databases;
+    • assets;
+    • user interfaces;
+    • algorithms;
+    • models;
+    • authentication mechanisms;
+    • license-management components;
+    • updates;
+    • patches;
+    • upgrades;
+    • security mechanisms;
+    • associated services; and
+    • any component or derivative supplied by or on behalf of the Licensor.
+1.2 “Licensor”
 “Licensor” means the owner or authorized distributor of the Software.
-
-### 1.3 “Licensee”
-
+1.3 “Licensee”
 “Licensee” means the individual or legal entity to which the License has been legitimately issued.
-
-### 1.4 “Authorized User”
-
+1.4 “Authorized User”
 An “Authorized User” means only a person explicitly authorized by the Licensee and permitted under the applicable license plan.
-
-### 1.5 “Authorized Device”
-
+1.5 “Authorized Device”
 An “Authorized Device” means a computer, server, virtual machine, workstation, container, or other computing environment explicitly authorized by the License.
-
-### 1.6 “Licensed Instance”
-
+1.6 “Licensed Instance”
 A “Licensed Instance” means one authorized execution or installation of the Software within an authorized environment.
-
-### 1.7 “License Key”
-
+1.7 “License Key”
 “License Key” means any license token, serial number, cryptographic credential, activation token, certificate, entitlement, access token, or other mechanism issued by the Licensor for authorization.
-
-### 1.8 “License Server”
-
+1.8 “License Server”
 “License Server” means any infrastructure operated or designated by the Licensor for authentication, authorization, activation, telemetry, entitlement verification, revocation, or security enforcement.
-
-### 1.9 “Modification”
-
+1.9 “Modification”
 “Modification” means any alteration, adaptation, patch, translation, transformation, extension, replacement, or derivative change to the Software.
-
-### 1.10 “Reverse Engineering”
-
+1.10 “Reverse Engineering”
 “Reverse Engineering” includes, without limitation:
-
-- decompilation;
-- disassembly;
-- binary analysis;
-- static analysis;
-- dynamic analysis;
-- debugging;
-- tracing;
-- instrumentation;
-- deobfuscation;
-- extraction;
-- reconstruction;
-- protocol analysis;
-- algorithm recovery;
-- source-code recovery;
-- behavioral reconstruction; or
-- any attempt to derive non-public implementation details.
-
-### 1.11 “Circumvention”
-
+    • decompilation;
+    • disassembly;
+    • binary analysis;
+    • static analysis;
+    • dynamic analysis;
+    • debugging;
+    • tracing;
+    • instrumentation;
+    • deobfuscation;
+    • extraction;
+    • reconstruction;
+    • protocol analysis;
+    • algorithm recovery;
+    • source-code recovery;
+    • behavioral reconstruction; or
+    • any attempt to derive non-public implementation details.
+1.11 “Circumvention”
 “Circumvention” means bypassing, disabling, defeating, avoiding, manipulating, spoofing, intercepting, replacing, or otherwise defeating any technical, cryptographic, licensing, authentication, integrity, access-control, or security mechanism.
 
----
-
-# 2. OWNERSHIP
-
-The Software is **licensed, not sold**.
-
+2. OWNERSHIP
+The Software is licensed, not sold.
 All right, title, and interest in and to the Software remain exclusively with the Licensor and/or its licensors.
-
-Except for the limited rights expressly granted by this Agreement, the Licensee receives **no ownership interest whatsoever**.
-
+Except for the limited rights expressly granted by this Agreement, the Licensee receives no ownership interest whatsoever.
 Without limitation, the Licensor retains all rights relating to:
-
-- copyright;
-- patents;
-- trademarks;
-- trade secrets;
-- source code;
-- object code;
-- algorithms;
-- architecture;
-- databases;
-- interfaces;
-- designs;
-- documentation;
-- know-how;
-- proprietary methodologies;
-- security mechanisms; and
-- intellectual property.
-
+    • copyright;
+    • patents;
+    • trademarks;
+    • trade secrets;
+    • source code;
+    • object code;
+    • algorithms;
+    • architecture;
+    • databases;
+    • interfaces;
+    • designs;
+    • documentation;
+    • know-how;
+    • proprietary methodologies;
+    • security mechanisms; and
+    • intellectual property.
 No provision of this Agreement shall be interpreted as transferring intellectual-property ownership to the Licensee.
 
----
-
-# 3. LIMITED LICENSE GRANT
-
+3. LIMITED LICENSE GRANT
 Subject to continuous compliance with this Agreement, the Licensor grants the Licensee a:
-
-**limited, revocable, personal, non-exclusive, non-transferable, non-sublicensable, restricted license**
-
+limited, revocable, personal, non-exclusive, non-transferable, non-sublicensable, restricted license
 to use the Software solely for the purposes expressly authorized by the applicable license entitlement.
-
-The License does **not** grant the Licensee the right to:
-
-1. sell the Software;
-2. rent the Software;
-3. lease the Software;
-4. sublicense the Software;
-5. redistribute the Software;
-6. publish the Software;
-7. mirror the Software;
-8. host the Software for unauthorized third parties;
-9. provide the Software as a service;
-10. expose the Software through an unauthorized API;
-11. transfer the License;
-12. modify the Software;
-13. reverse engineer the Software;
-14. circumvent technical restrictions; or
-15. create derivative works.
-
+The License does not grant the Licensee the right to:
+    1. sell the Software;
+    2. rent the Software;
+    3. lease the Software;
+    4. sublicense the Software;
+    5. redistribute the Software;
+    6. publish the Software;
+    7. mirror the Software;
+    8. host the Software for unauthorized third parties;
+    9. provide the Software as a service;
+    10. expose the Software through an unauthorized API;
+    11. transfer the License;
+    12. modify the Software;
+    13. reverse engineer the Software;
+    14. circumvent technical restrictions; or
+    15. create derivative works.
 Any right not expressly granted is expressly reserved by the Licensor.
 
----
-
-# 4. STRICT INSTALLATION RESTRICTIONS
-
+4. STRICT INSTALLATION RESTRICTIONS
 The Software may only be installed on Authorized Devices.
-
 The Licensee shall not:
-
-- clone a Licensed Instance for unauthorized deployment;
-- duplicate a License Key;
-- copy a licensed environment to another machine;
-- migrate the Software to another environment without authorization;
-- deploy the Software on unauthorized servers;
-- deploy the Software through unauthorized virtualization environments;
-- deploy multiple instances using a single-instance license;
-- create unauthorized replicas;
-- create unauthorized container images;
-- distribute preconfigured copies;
-- create unauthorized backup installations; or
-- permit another party to access a Licensed Instance.
-
+    • clone a Licensed Instance for unauthorized deployment;
+    • duplicate a License Key;
+    • copy a licensed environment to another machine;
+    • migrate the Software to another environment without authorization;
+    • deploy the Software on unauthorized servers;
+    • deploy the Software through unauthorized virtualization environments;
+    • deploy multiple instances using a single-instance license;
+    • create unauthorized replicas;
+    • create unauthorized container images;
+    • distribute preconfigured copies;
+    • create unauthorized backup installations; or
+    • permit another party to access a Licensed Instance.
 Any installation outside the authorized entitlement constitutes unauthorized use.
 
----
-
-# 5. DEVICE AND ENVIRONMENT BINDING
-
+5. DEVICE AND ENVIRONMENT BINDING
 Where technically implemented, the Licensor may bind a License to one or more identifiers, including:
-
-- hardware identifiers;
-- CPU identifiers;
-- motherboard identifiers;
-- machine identifiers;
-- operating-system identifiers;
-- virtual-machine identifiers;
-- cloud-instance identifiers;
-- cryptographic identities;
-- network identifiers;
-- account identifiers; or
-- other environment characteristics.
-
+    • hardware identifiers;
+    • CPU identifiers;
+    • motherboard identifiers;
+    • machine identifiers;
+    • operating-system identifiers;
+    • virtual-machine identifiers;
+    • cloud-instance identifiers;
+    • cryptographic identities;
+    • network identifiers;
+    • account identifiers; or
+    • other environment characteristics.
 The Licensee acknowledges that changing the underlying environment may require reauthorization.
-
 The Licensor may reject reactivation where the requested environment change appears inconsistent with legitimate use.
 
----
-
-# 6. ACCOUNT BINDING
-
+6. ACCOUNT BINDING
 Where applicable, a License may be associated with:
-
-- one user account;
-- one organization;
-- one customer account;
-- one authorized email address; or
-- another identity specified by the Licensor.
-
+    • one user account;
+    • one organization;
+    • one customer account;
+    • one authorized email address; or
+    • another identity specified by the Licensor.
 License credentials must not be shared.
-
 Account credentials must not be:
+    • sold;
+    • rented;
+    • transferred;
+    • published;
+    • exposed;
+    • embedded in public repositories;
+    • placed in public configuration files; or
+    • disclosed to unauthorized parties.
 
-- sold;
-- rented;
-- transferred;
-- published;
-- exposed;
-- embedded in public repositories;
-- placed in public configuration files; or
-- disclosed to unauthorized parties.
-
----
-
-# 7. LICENSE KEY PROTECTION
-
+7. LICENSE KEY PROTECTION
 License Keys are confidential credentials.
-
 The Licensee shall take reasonable measures to prevent unauthorized access to License Keys.
-
 The following activities are prohibited:
-
-- publishing License Keys;
-- uploading License Keys to public repositories;
-- embedding License Keys into publicly distributed applications;
-- sharing License Keys with unauthorized users;
-- selling License Keys;
-- renting License Keys;
-- generating unauthorized License Keys;
-- modifying License Keys;
-- forging License Keys;
-- manipulating license metadata;
-- extracting cryptographic secrets; or
-- attempting to reproduce the licensing mechanism.
-
+    • publishing License Keys;
+    • uploading License Keys to public repositories;
+    • embedding License Keys into publicly distributed applications;
+    • sharing License Keys with unauthorized users;
+    • selling License Keys;
+    • renting License Keys;
+    • generating unauthorized License Keys;
+    • modifying License Keys;
+    • forging License Keys;
+    • manipulating license metadata;
+    • extracting cryptographic secrets; or
+    • attempting to reproduce the licensing mechanism.
 The Licensor may immediately revoke a compromised License Key.
 
----
-
-# 8. NO REVERSE ENGINEERING
-
+8. NO REVERSE ENGINEERING
 To the maximum extent permitted by applicable law, the Licensee shall not:
-
-- reverse engineer;
-- decompile;
-- disassemble;
-- decode;
-- deobfuscate;
-- reconstruct;
-- analyze proprietary algorithms;
-- extract cryptographic material;
-- inspect proprietary protocols;
-- recover source code;
-- derive undocumented APIs;
-- analyze internal licensing mechanisms; or
-- assist another person in performing any prohibited activity.
-
+    • reverse engineer;
+    • decompile;
+    • disassemble;
+    • decode;
+    • deobfuscate;
+    • reconstruct;
+    • analyze proprietary algorithms;
+    • extract cryptographic material;
+    • inspect proprietary protocols;
+    • recover source code;
+    • derive undocumented APIs;
+    • analyze internal licensing mechanisms; or
+    • assist another person in performing any prohibited activity.
 The prohibition applies whether the activity is performed manually, automatically, remotely, or through a third-party service.
 
----
-
-# 9. NO CIRCUMVENTION
-
+9. NO CIRCUMVENTION
 The Licensee shall not attempt to bypass or disable:
-
-- license validation;
-- activation;
-- authentication;
-- entitlement checks;
-- expiration checks;
-- device binding;
-- account binding;
-- integrity verification;
-- anti-tampering mechanisms;
-- cryptographic verification;
-- server-side authorization;
-- feature restrictions;
-- usage limits;
-- concurrency limits;
-- subscription restrictions;
-- revocation mechanisms; or
-- any other access-control mechanism.
-
+    • license validation;
+    • activation;
+    • authentication;
+    • entitlement checks;
+    • expiration checks;
+    • device binding;
+    • account binding;
+    • integrity verification;
+    • anti-tampering mechanisms;
+    • cryptographic verification;
+    • server-side authorization;
+    • feature restrictions;
+    • usage limits;
+    • concurrency limits;
+    • subscription restrictions;
+    • revocation mechanisms; or
+    • any other access-control mechanism.
 This includes attempts using:
+    • patched binaries;
+    • modified executables;
+    • injected code;
+    • runtime hooks;
+    • proxy interception;
+    • forged responses;
+    • replay attacks;
+    • manipulated system clocks;
+    • altered DNS resolution;
+    • certificate manipulation;
+    • modified network traffic;
+    • unauthorized API replicas;
+    • emulators;
+    • loaders;
+    • cracks;
+    • key generators; or
+    • similar mechanisms.
 
-- patched binaries;
-- modified executables;
-- injected code;
-- runtime hooks;
-- proxy interception;
-- forged responses;
-- replay attacks;
-- manipulated system clocks;
-- altered DNS resolution;
-- certificate manipulation;
-- modified network traffic;
-- unauthorized API replicas;
-- emulators;
-- loaders;
-- cracks;
-- key generators; or
-- similar mechanisms.
-
----
-
-# 10. NO UNAUTHORIZED DISTRIBUTION
-
+10. NO UNAUTHORIZED DISTRIBUTION
 The Licensee shall not distribute any portion of the Software without prior written authorization.
-
 This prohibition includes:
+    • binaries;
+    • installers;
+    • source code;
+    • libraries;
+    • plugins;
+    • containers;
+    • Docker images;
+    • VM images;
+    • backups;
+    • patches;
+    • modified versions;
+    • activation files;
+    • configuration packages;
+    • license files;
+    • documentation containing protected information; and
+    • proprietary assets.
 
-- binaries;
-- installers;
-- source code;
-- libraries;
-- plugins;
-- containers;
-- Docker images;
-- VM images;
-- backups;
-- patches;
-- modified versions;
-- activation files;
-- configuration packages;
-- license files;
-- documentation containing protected information; and
-- proprietary assets.
-
----
-
-# 11. NO COMMERCIAL RESALE
-
+11. NO COMMERCIAL RESALE
 Unless expressly authorized in writing, the Licensee shall not:
+    • resell the Software;
+    • bundle the Software into another commercial product;
+    • sublicense functionality;
+    • rent access;
+    • offer hosted access;
+    • provide managed access;
+    • operate a competing service using the Software;
+    • provide the Software to customers;
+    • monetize unauthorized access; or
+    • otherwise commercially exploit the Software.
 
-- resell the Software;
-- bundle the Software into another commercial product;
-- sublicense functionality;
-- rent access;
-- offer hosted access;
-- provide managed access;
-- operate a competing service using the Software;
-- provide the Software to customers;
-- monetize unauthorized access; or
-- otherwise commercially exploit the Software.
-
----
-
-# 12. NO COMPETITIVE USE
-
+12. NO COMPETITIVE USE
 To the maximum extent permitted by applicable law, the Licensee shall not use the Software or access to the Software for the purpose of:
+    • developing a competing product;
+    • benchmarking a competing product;
+    • reproducing functionality;
+    • analyzing architecture;
+    • comparing proprietary implementation details;
+    • developing a replacement;
+    • conducting competitive intelligence; or
+    • assisting a competitor.
 
-- developing a competing product;
-- benchmarking a competing product;
-- reproducing functionality;
-- analyzing architecture;
-- comparing proprietary implementation details;
-- developing a replacement;
-- conducting competitive intelligence; or
-- assisting a competitor.
-
----
-
-# 13. NO SOURCE-CODE RIGHTS
-
-Unless separately agreed in writing, the Licensee receives **zero source-code rights**.
-
+13. NO SOURCE-CODE RIGHTS
+Unless separately agreed in writing, the Licensee receives zero source-code rights.
 The existence of:
-
-- APIs;
-- SDKs;
-- plugins;
-- scripts;
-- configuration files;
-- debugging symbols; or
-- development documentation
-
+    • APIs;
+    • SDKs;
+    • plugins;
+    • scripts;
+    • configuration files;
+    • debugging symbols; or
+    • development documentation
 does not grant source-code ownership or access rights.
 
----
-
-# 14. MODIFICATIONS
-
+14. MODIFICATIONS
 The Licensee shall not modify the Software.
-
 This includes modifications intended to:
-
-- add functionality;
-- remove restrictions;
-- alter branding;
-- change authentication;
-- disable telemetry;
-- disable security;
-- bypass activation;
-- alter license verification;
-- modify feature limits;
-- change internal behavior; or
-- create derivative products.
-
+    • add functionality;
+    • remove restrictions;
+    • alter branding;
+    • change authentication;
+    • disable telemetry;
+    • disable security;
+    • bypass activation;
+    • alter license verification;
+    • modify feature limits;
+    • change internal behavior; or
+    • create derivative products.
 Official extension mechanisms explicitly documented by the Licensor are excluded only to the extent expressly permitted by their documentation.
 
----
-
-# 15. SECURITY AND TAMPERING
-
+15. SECURITY AND TAMPERING
 The Software may contain security and integrity mechanisms.
-
 The Licensee shall not:
-
-- remove them;
-- disable them;
-- modify them;
-- interfere with them;
-- falsify their output;
-- manipulate their inputs;
-- intercept security communications;
-- substitute verification services; or
-- otherwise interfere with their operation.
-
+    • remove them;
+    • disable them;
+    • modify them;
+    • interfere with them;
+    • falsify their output;
+    • manipulate their inputs;
+    • intercept security communications;
+    • substitute verification services; or
+    • otherwise interfere with their operation.
 Any suspected tampering may result in immediate suspension.
 
----
-
-# 16. LICENSE VALIDATION
-
+16. LICENSE VALIDATION
 The Licensor may require periodic validation of License status.
-
 Validation may include:
-
-- license identity;
-- account identity;
-- installation identity;
-- device identity;
-- entitlement status;
-- expiration;
-- activation status;
-- concurrency;
-- security status;
-- revocation status; and
-- integrity status.
-
+    • license identity;
+    • account identity;
+    • installation identity;
+    • device identity;
+    • entitlement status;
+    • expiration;
+    • activation status;
+    • concurrency;
+    • security status;
+    • revocation status; and
+    • integrity status.
 Failure to successfully validate may result in restricted or suspended functionality where technically necessary.
 
----
-
-# 17. OFFLINE OPERATION
-
+17. OFFLINE OPERATION
 Offline operation is permitted only when explicitly authorized.
-
 An offline license may contain:
-
-- expiration timestamps;
-- cryptographic signatures;
-- device binding;
-- installation limits;
-- feature entitlements;
-- activation counters; and
-- other security restrictions.
-
+    • expiration timestamps;
+    • cryptographic signatures;
+    • device binding;
+    • installation limits;
+    • feature entitlements;
+    • activation counters; and
+    • other security restrictions.
 Manipulating system time or environmental data to extend an offline authorization is prohibited.
 
----
-
-# 18. LICENSE REVOCATION
-
+18. LICENSE REVOCATION
 The Licensor may revoke a License where permitted by applicable law if:
-
-- the License is compromised;
-- the License Key is publicly disclosed;
-- unauthorized distribution occurs;
-- fraudulent activation is detected;
-- circumvention is detected;
-- material breach occurs;
-- payment obligations are violated;
-- the Software is used unlawfully;
-- the License is transferred without authorization; or
-- continued use presents a material security risk.
-
+    • the License is compromised;
+    • the License Key is publicly disclosed;
+    • unauthorized distribution occurs;
+    • fraudulent activation is detected;
+    • circumvention is detected;
+    • material breach occurs;
+    • payment obligations are violated;
+    • the Software is used unlawfully;
+    • the License is transferred without authorization; or
+    • continued use presents a material security risk.
 Revocation may be permanent.
 
----
-
-# 19. AUTOMATED SECURITY ENFORCEMENT
-
+19. AUTOMATED SECURITY ENFORCEMENT
 The Software may automatically enforce license restrictions.
-
 Subject to applicable law, enforcement mechanisms may include:
-
-- disabling unauthorized features;
-- terminating unauthorized sessions;
-- requiring reauthentication;
-- invalidating credentials;
-- blocking unauthorized installations;
-- preventing activation;
-- suspending access;
-- revoking compromised credentials; and
-- requiring administrator intervention.
-
+    • disabling unauthorized features;
+    • terminating unauthorized sessions;
+    • requiring reauthentication;
+    • invalidating credentials;
+    • blocking unauthorized installations;
+    • preventing activation;
+    • suspending access;
+    • revoking compromised credentials; and
+    • requiring administrator intervention.
 The Licensee agrees not to interfere with such mechanisms.
 
----
-
-# 20. TELEMETRY AND SECURITY DATA
-
+20. TELEMETRY AND SECURITY DATA
 Where disclosed and permitted by applicable law, the Software may transmit limited technical information necessary for:
-
-- licensing;
-- authentication;
-- security;
-- fraud prevention;
-- abuse detection;
-- compatibility;
-- diagnostics; and
-- service operation.
-
+    • licensing;
+    • authentication;
+    • security;
+    • fraud prevention;
+    • abuse detection;
+    • compatibility;
+    • diagnostics; and
+    • service operation.
 Such information may include technical identifiers and license-related metadata.
-
 The Licensor shall handle such information in accordance with its applicable privacy policy and law.
 
----
-
-# 21. AUDIT RIGHTS
-
+21. AUDIT RIGHTS
 Where permitted by applicable law and reasonably necessary to verify compliance, the Licensor may request information reasonably related to License usage.
-
 The Licensee shall reasonably cooperate with legitimate compliance verification requests.
-
 Audits shall be conducted in a manner reasonably designed to minimize disruption.
 
----
-
-# 22. CONFIDENTIALITY
-
+22. CONFIDENTIALITY
 All non-public information relating to the Software shall be treated as confidential.
-
 Confidential information includes:
-
-- source code;
-- architecture;
-- algorithms;
-- security mechanisms;
-- cryptographic material;
-- proprietary protocols;
-- internal documentation;
-- unreleased features;
-- development information;
-- pricing information marked confidential;
-- License Keys; and
-- technical information designated confidential.
-
+    • source code;
+    • architecture;
+    • algorithms;
+    • security mechanisms;
+    • cryptographic material;
+    • proprietary protocols;
+    • internal documentation;
+    • unreleased features;
+    • development information;
+    • pricing information marked confidential;
+    • License Keys; and
+    • technical information designated confidential.
 The Licensee shall not disclose such information to unauthorized parties.
 
----
-
-# 23. SECURITY VULNERABILITIES
-
+23. SECURITY VULNERABILITIES
 If the Licensee discovers a security vulnerability, they should promptly notify the Licensor through the officially designated security channel.
-
 The Licensee shall not publicly disclose exploit details before allowing the Licensor a reasonable opportunity to investigate and remediate the issue, except where otherwise required by applicable law.
 
----
-
-# 24. PROHIBITED AUTOMATION
-
+24. PROHIBITED AUTOMATION
 The Licensee shall not use automated systems to:
+    • mass-register licenses;
+    • brute-force activation;
+    • enumerate License Keys;
+    • enumerate internal APIs;
+    • scrape proprietary interfaces;
+    • generate unauthorized activation requests;
+    • exhaust authentication systems;
+    • abuse license servers;
+    • bypass rate limits; or
+    • interfere with licensing infrastructure.
 
-- mass-register licenses;
-- brute-force activation;
-- enumerate License Keys;
-- enumerate internal APIs;
-- scrape proprietary interfaces;
-- generate unauthorized activation requests;
-- exhaust authentication systems;
-- abuse license servers;
-- bypass rate limits; or
-- interfere with licensing infrastructure.
-
----
-
-# 25. THIRD-PARTY ACCESS
-
+25. THIRD-PARTY ACCESS
 The Licensee shall not allow unauthorized third parties to use the Software.
-
 This includes access through:
+    • remote desktop;
+    • SSH;
+    • APIs;
+    • shared accounts;
+    • hosted services;
+    • proxy services;
+    • VPN access;
+    • containers;
+    • virtual machines; or
+    • other indirect mechanisms.
 
-- remote desktop;
-- SSH;
-- APIs;
-- shared accounts;
-- hosted services;
-- proxy services;
-- VPN access;
-- containers;
-- virtual machines; or
-- other indirect mechanisms.
-
----
-
-# 26. BACKUPS
-
+26. BACKUPS
 The Licensee may maintain reasonable backups solely for disaster recovery where permitted by the applicable license.
-
 Backups must not be used to:
+    • create additional production installations;
+    • bypass licensing;
+    • distribute the Software;
+    • create additional Licensed Instances; or
+    • provide unauthorized access.
 
-- create additional production installations;
-- bypass licensing;
-- distribute the Software;
-- create additional Licensed Instances; or
-- provide unauthorized access.
-
----
-
-# 27. TRANSFER
-
+27. TRANSFER
 The License is personal to the Licensee.
-
 No transfer is permitted without prior written authorization.
-
 A transfer includes:
+    • selling an account;
+    • transferring credentials;
+    • transferring a machine;
+    • transferring an installation;
+    • transferring a license entitlement;
+    • transferring control of an organization; or
+    • otherwise assigning rights under this Agreement.
 
-- selling an account;
-- transferring credentials;
-- transferring a machine;
-- transferring an installation;
-- transferring a license entitlement;
-- transferring control of an organization; or
-- otherwise assigning rights under this Agreement.
-
----
-
-# 28. INTELLECTUAL PROPERTY NOTICES
-
+28. INTELLECTUAL PROPERTY NOTICES
 The Licensee shall not remove, obscure, modify, or falsify:
+    • copyright notices;
+    • trademarks;
+    • license notices;
+    • attribution notices;
+    • proprietary notices;
+    • security notices; or
+    • other intellectual-property notices.
 
-- copyright notices;
-- trademarks;
-- license notices;
-- attribution notices;
-- proprietary notices;
-- security notices; or
-- other intellectual-property notices.
-
----
-
-# 29. THIRD-PARTY COMPONENTS
-
+29. THIRD-PARTY COMPONENTS
 The Software may contain third-party components subject to separate licenses.
-
 Where applicable, those licenses govern the respective components.
-
 Nothing in this Agreement grants rights beyond those granted by the applicable third-party license.
 
----
-
-# 30. UPDATES
-
+30. UPDATES
 The Licensor may provide:
-
-- patches;
-- security fixes;
-- feature updates;
-- compatibility updates;
-- maintenance releases;
-- major upgrades; or
-- other modifications.
-
+    • patches;
+    • security fixes;
+    • feature updates;
+    • compatibility updates;
+    • maintenance releases;
+    • major upgrades; or
+    • other modifications.
 The Licensor may change or discontinue features subject to applicable contractual obligations.
 
----
-
-# 31. SUPPORT
-
+31. SUPPORT
 Technical support is provided only if expressly included in the applicable license plan or commercial agreement.
-
 Support does not create additional intellectual-property rights.
 
----
-
-# 32. PAYMENT AND ENTITLEMENT
-
+32. PAYMENT AND ENTITLEMENT
 Where the License is commercially purchased, continued use may depend upon:
-
-- payment;
-- subscription status;
-- renewal;
-- account status;
-- entitlement status; or
-- compliance with applicable commercial terms.
-
+    • payment;
+    • subscription status;
+    • renewal;
+    • account status;
+    • entitlement status; or
+    • compliance with applicable commercial terms.
 Non-payment may result in suspension or expiration as specified by the applicable commercial terms.
 
----
-
-# 33. EXPIRATION
-
+33. EXPIRATION
 A time-limited License automatically expires at the end of its authorized term unless renewed.
-
 Upon expiration, the Licensee must immediately cease use unless a valid renewed entitlement exists.
 
----
-
-# 34. TERMINATION
-
+34. TERMINATION
 This Agreement may terminate upon:
+    1. expiration of the License;
+    2. material breach;
+    3. unauthorized distribution;
+    4. unauthorized transfer;
+    5. circumvention;
+    6. fraud;
+    7. unlawful use;
+    8. failure to satisfy applicable commercial terms; or
+    9. other termination grounds permitted by applicable law.
 
-1. expiration of the License;
-2. material breach;
-3. unauthorized distribution;
-4. unauthorized transfer;
-5. circumvention;
-6. fraud;
-7. unlawful use;
-8. failure to satisfy applicable commercial terms; or
-9. other termination grounds permitted by applicable law.
-
----
-
-# 35. EFFECT OF TERMINATION
-
+35. EFFECT OF TERMINATION
 Upon termination, the Licensee shall:
-
-- cease using the Software;
-- cease accessing protected services;
-- remove unauthorized installations;
-- stop distributing the Software;
-- stop using License Keys; and
-- comply with applicable destruction or return requirements.
-
+    • cease using the Software;
+    • cease accessing protected services;
+    • remove unauthorized installations;
+    • stop distributing the Software;
+    • stop using License Keys; and
+    • comply with applicable destruction or return requirements.
 Sections intended by their nature to survive termination shall survive termination.
 
----
-
-# 36. NO IMPLIED LICENSE
-
+36. NO IMPLIED LICENSE
 No license shall arise by:
-
-- implication;
-- estoppel;
-- course of dealing;
-- possession;
-- access;
-- installation;
-- payment; or
-- any other means
-
+    • implication;
+    • estoppel;
+    • course of dealing;
+    • possession;
+    • access;
+    • installation;
+    • payment; or
+    • any other means
 except through an express written grant.
 
----
-
-# 37. NO WARRANTY
-
+37. NO WARRANTY
 TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE SOFTWARE IS PROVIDED ON AN “AS IS” AND “AS AVAILABLE” BASIS.
-
 THE LICENSOR DISCLAIMS WARRANTIES NOT EXPRESSLY PROVIDED BY LAW OR BY A WRITTEN COMMERCIAL AGREEMENT, INCLUDING IMPLIED WARRANTIES TO THE EXTENT SUCH DISCLAIMERS ARE LEGALLY PERMITTED.
 
----
-
-# 38. LIMITATION OF LIABILITY
-
+38. LIMITATION OF LIABILITY
 TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE LICENSOR SHALL NOT BE LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES ARISING FROM USE OR INABILITY TO USE THE SOFTWARE.
-
 Nothing in this Agreement excludes liability that cannot lawfully be excluded.
 
----
-
-# 39. FORCE MAJEURE
-
+39. FORCE MAJEURE
 The Licensor shall not be responsible for failures caused by circumstances beyond reasonable control, including:
+    • natural disasters;
+    • infrastructure failures;
+    • telecommunications failures;
+    • cyber incidents;
+    • governmental actions;
+    • war;
+    • civil unrest;
+    • widespread service outages; or
+    • other extraordinary circumstances.
 
-- natural disasters;
-- infrastructure failures;
-- telecommunications failures;
-- cyber incidents;
-- governmental actions;
-- war;
-- civil unrest;
-- widespread service outages; or
-- other extraordinary circumstances.
-
----
-
-# 40. COMPLIANCE WITH LAW
-
+40. COMPLIANCE WITH LAW
 The Licensee shall comply with all laws applicable to their use of the Software.
-
 Nothing in this Agreement authorizes unlawful activity.
 
----
-
-# 41. SEVERABILITY
-
+41. SEVERABILITY
 If any provision is determined to be invalid or unenforceable, that provision shall be enforced to the maximum extent permitted by law, and the remaining provisions shall remain effective.
 
----
-
-# 42. NO WAIVER
-
+42. NO WAIVER
 Failure by the Licensor to enforce a provision does not constitute a waiver of that provision.
-
 A waiver must be expressly made in writing.
 
----
-
-# 43. ENTIRE AGREEMENT
-
+43. ENTIRE AGREEMENT
 This Agreement, together with applicable commercial terms, privacy documentation, and expressly incorporated documents, constitutes the entire agreement regarding the Software unless superseded by a written agreement signed by authorized representatives.
 
----
-
-# 44. AMENDMENTS
-
+44. AMENDMENTS
 The Licensor may amend this Agreement where legally permissible.
-
 Material changes may be communicated through appropriate channels.
-
 Continued use after an applicable effective date may constitute acceptance where legally permitted.
 
----
-
-# 45. GOVERNING LAW
-
+45. GOVERNING LAW
 This Agreement shall be governed by the laws of:
-
-**[JURISDICTION]**
-
+[JURISDICTION]
 without regard to conflict-of-law principles, subject to mandatory laws applicable to the parties.
 
----
-
-# 46. JURISDICTION
-
+46. JURISDICTION
 Any dispute arising from this Agreement shall be subject to the jurisdiction of:
-
-**[COURT / JURISDICTION]**
-
+[COURT / JURISDICTION]
 unless applicable law requires otherwise.
 
----
+47. STRICT INTERPRETATION OF LICENSE SCOPE
+Where there is uncertainty regarding whether an activity is authorized, the activity shall be considered not authorized unless expressly permitted by:
+    1. this Agreement;
+    2. the applicable license entitlement;
+    3. official documentation; or
+    4. a separate written authorization issued by the Licensor.
 
-# 47. STRICT INTERPRETATION OF LICENSE SCOPE
-
-Where there is uncertainty regarding whether an activity is authorized, the activity shall be considered **not authorized** unless expressly permitted by:
-
-1. this Agreement;
-2. the applicable license entitlement;
-3. official documentation; or
-4. a separate written authorization issued by the Licensor.
-
----
-
-# 48. NO SECURITY RESEARCH EXCEPTION
-
+48. NO SECURITY RESEARCH EXCEPTION
 Access to the Software does not automatically grant permission to perform security research.
-
 Security testing involving proprietary infrastructure, authentication systems, license systems, or protected services requires explicit authorization where required by applicable law.
-
 Nothing herein is intended to restrict legally protected security research rights that cannot lawfully be waived.
 
----
-
-# 49. ZERO-TRUST LICENSE PRINCIPLE
-
+49. ZERO-TRUST LICENSE PRINCIPLE
 The licensing system may operate according to the following principle:
-
-> **No authorization shall be presumed. Authorization must be explicitly established.**
-
+No authorization shall be presumed. Authorization must be explicitly established.
 Possession of the Software does not establish authorization.
-
 Possession of a License Key does not establish authorization if the License Key has been revoked, compromised, transferred, or otherwise invalidated.
-
 Access to a License Server does not constitute permission to access unrelated systems.
 
----
-
-# 50. MAXIMUM LICENSE SECURITY REQUIREMENTS
-
+50. MAXIMUM LICENSE SECURITY REQUIREMENTS
 Where implemented by the Licensor, the licensing infrastructure may use:
-
-- asymmetric cryptographic signatures;
-- short-lived authorization tokens;
-- device binding;
-- account binding;
-- server-side entitlement validation;
-- certificate-based authentication;
-- integrity verification;
-- replay protection;
-- nonce-based authorization;
-- timestamp validation;
-- revocation lists;
-- key rotation;
-- rate limiting;
-- anomaly detection;
-- abuse prevention;
-- installation counters;
-- concurrency controls;
-- tamper detection;
-- secure storage;
-- credential rotation;
-- audit logs; and
-- emergency revocation.
-
+    • asymmetric cryptographic signatures;
+    • short-lived authorization tokens;
+    • device binding;
+    • account binding;
+    • server-side entitlement validation;
+    • certificate-based authentication;
+    • integrity verification;
+    • replay protection;
+    • nonce-based authorization;
+    • timestamp validation;
+    • revocation lists;
+    • key rotation;
+    • rate limiting;
+    • anomaly detection;
+    • abuse prevention;
+    • installation counters;
+    • concurrency controls;
+    • tamper detection;
+    • secure storage;
+    • credential rotation;
+    • audit logs; and
+    • emergency revocation.
 These mechanisms are intended to protect the Software and do not create additional rights for the Licensee.
 
----
-
-# 51. PROHIBITION ON LICENSE SYSTEM REPLICATION
-
+51. PROHIBITION ON LICENSE SYSTEM REPLICATION
 The Licensee shall not reproduce, emulate, clone, mirror, or recreate the Licensor's licensing infrastructure for the purpose of obtaining unauthorized access.
-
 This includes attempting to reproduce:
+    • License Servers;
+    • activation endpoints;
+    • validation protocols;
+    • cryptographic verification;
+    • authorization logic;
+    • entitlement databases;
+    • token-generation mechanisms; or
+    • other proprietary licensing infrastructure.
 
-- License Servers;
-- activation endpoints;
-- validation protocols;
-- cryptographic verification;
-- authorization logic;
-- entitlement databases;
-- token-generation mechanisms; or
-- other proprietary licensing infrastructure.
-
----
-
-# 52. PROHIBITION ON LICENSE SHARING
-
+52. PROHIBITION ON LICENSE SHARING
 A License assigned to one Authorized User, Device, Organization, or Environment may not be shared with another unless expressly permitted.
-
 Shared credentials may be treated as a security compromise.
 
----
-
-# 53. FRAUDULENT REPRESENTATION
-
+53. FRAUDULENT REPRESENTATION
 The Licensee shall not misrepresent:
-
-- identity;
-- organization;
-- ownership;
-- device identity;
-- installation identity;
-- License status;
-- entitlement;
-- authorization;
-- commercial purpose; or
-- deployment environment
-
+    • identity;
+    • organization;
+    • ownership;
+    • device identity;
+    • installation identity;
+    • License status;
+    • entitlement;
+    • authorization;
+    • commercial purpose; or
+    • deployment environment
 for the purpose of obtaining or retaining unauthorized access.
 
----
-
-# 54. LICENSE ENFORCEMENT
-
+54. LICENSE ENFORCEMENT
 The Licensor reserves the right to use reasonable technical and contractual measures to enforce this Agreement.
-
 Such measures shall remain subject to applicable law.
-
 Nothing in this provision authorizes unlawful access to systems or data unrelated to the Software or its legitimate licensing infrastructure.
 
----
-
-# 55. EMERGENCY SECURITY ACTIONS
-
+55. EMERGENCY SECURITY ACTIONS
 Where necessary to protect the Software, License infrastructure, users, or other legitimate interests, the Licensor may take reasonable emergency security measures, including suspension or revocation of affected credentials.
-
 Where appropriate, the Licensor may subsequently investigate and restore legitimate access.
 
----
-
-# 56. NO OWNERSHIP THROUGH PAYMENT
-
+56. NO OWNERSHIP THROUGH PAYMENT
 Payment for a License does not constitute purchase of the Software itself.
-
 Payment grants only the rights expressly specified in the applicable License.
 
----
-
-# 57. NO PERPETUAL RIGHTS UNLESS EXPRESSLY STATED
-
+57. NO PERPETUAL RIGHTS UNLESS EXPRESSLY STATED
 A License shall not be interpreted as perpetual unless the applicable commercial agreement expressly states that it is perpetual.
-
 “Lifetime,” “permanent,” or similar terminology shall have only the meaning expressly specified in the applicable written agreement.
 
----
-
-# 58. ENTERPRISE DEPLOYMENT
-
+58. ENTERPRISE DEPLOYMENT
 Enterprise deployment requires explicit authorization.
-
 Unless otherwise agreed in writing, enterprise use does not automatically authorize:
+    • unlimited users;
+    • unlimited devices;
+    • unlimited installations;
+    • unlimited servers;
+    • redistribution;
+    • customer-facing deployment; or
+    • sublicensing.
 
-- unlimited users;
-- unlimited devices;
-- unlimited installations;
-- unlimited servers;
-- redistribution;
-- customer-facing deployment; or
-- sublicensing.
-
----
-
-# 59. SERVICE-BUREAU RESTRICTION
-
+59. SERVICE-BUREAU RESTRICTION
 Unless explicitly authorized, the Licensee shall not operate the Software for the benefit of unrelated third parties where such operation effectively provides those parties with access to the Software's functionality.
 
----
-
-# 60. CLOUD AND HOSTING RESTRICTIONS
-
+60. CLOUD AND HOSTING RESTRICTIONS
 A License restricted to local or designated environments may not be deployed to:
-
-- public cloud;
-- private cloud;
-- VPS;
-- dedicated servers;
-- containers;
-- orchestration platforms;
-- serverless infrastructure; or
-- other hosted environments
-
+    • public cloud;
+    • private cloud;
+    • VPS;
+    • dedicated servers;
+    • containers;
+    • orchestration platforms;
+    • serverless infrastructure; or
+    • other hosted environments
 unless expressly authorized.
 
----
-
-# 61. ADMINISTRATIVE ACCESS
-
+61. ADMINISTRATIVE ACCESS
 Administrative credentials and privileged access mechanisms must only be used by authorized personnel.
-
 The Licensee shall implement reasonable security controls to protect administrative access.
 
----
-
-# 62. RESPONSIBILITY FOR CREDENTIALS
-
+62. RESPONSIBILITY FOR CREDENTIALS
 The Licensee is responsible for safeguarding credentials under their control.
-
 Unauthorized use resulting from negligent credential handling may constitute a breach where permitted by applicable law.
 
----
-
-# 63. NO UNAUTHORIZED API ACCESS
-
+63. NO UNAUTHORIZED API ACCESS
 Undocumented APIs, internal endpoints, administrative endpoints, private protocols, and internal services are not authorized interfaces merely because they are technically accessible.
 
----
-
-# 64. DOCUMENTATION LIMITATION
-
+64. DOCUMENTATION LIMITATION
 Documentation provided by the Licensor is provided solely to facilitate authorized use.
-
 Documentation does not grant rights beyond the License.
 
----
-
-# 65. TRADE SECRET PROTECTION
-
+65. TRADE SECRET PROTECTION
 The Licensee acknowledges that certain aspects of the Software may constitute trade secrets or confidential proprietary information.
-
 The Licensee shall not knowingly disclose or misappropriate such information.
 
----
-
-# 66. COPYRIGHT
-
+66. COPYRIGHT
 The Software and associated materials are protected by applicable copyright laws and international agreements.
-
 Unauthorized reproduction may constitute infringement.
 
----
-
-# 67. TRADEMARKS
-
+67. TRADEMARKS
 All trademarks, service marks, logos, product names, and brand identifiers remain the property of their respective owners.
-
 No trademark rights are granted under this Agreement.
 
----
-
-# 68. RESERVATION OF RIGHTS
-
+68. RESERVATION OF RIGHTS
 ALL RIGHTS NOT EXPRESSLY GRANTED TO THE LICENSEE ARE RESERVED BY THE LICENSOR.
 
----
-
-# 69. ACKNOWLEDGEMENT
-
+69. ACKNOWLEDGEMENT
 By using the Software, the Licensee acknowledges that:
+    • the Software is proprietary;
+    • the License is limited;
+    • unauthorized redistribution is prohibited;
+    • unauthorized modification is prohibited;
+    • reverse engineering is restricted to the maximum extent permitted by law;
+    • circumvention is prohibited;
+    • License Keys are confidential;
+    • unauthorized access may result in suspension or termination; and
+    • ownership remains with the Licensor.
 
-- the Software is proprietary;
-- the License is limited;
-- unauthorized redistribution is prohibited;
-- unauthorized modification is prohibited;
-- reverse engineering is restricted to the maximum extent permitted by law;
-- circumvention is prohibited;
-- License Keys are confidential;
-- unauthorized access may result in suspension or termination; and
-- ownership remains with the Licensor.
-
----
-
-# 70. FINAL ACCEPTANCE
-
-**BY INSTALLING, ACTIVATING, ACCESSING, EXECUTING, OR USING THE SOFTWARE, YOU CONFIRM THAT YOU HAVE READ AND ACCEPTED THIS AGREEMENT.**
-
+70. FINAL ACCEPTANCE
+BY INSTALLING, ACTIVATING, ACCESSING, EXECUTING, OR USING THE SOFTWARE, YOU CONFIRM THAT YOU HAVE READ AND ACCEPTED THIS AGREEMENT.
 If you do not accept these terms, you must not use the Software.
 
----
+LICENSE INFORMATION
+Software: BandrewPay - Payemnt
+Licensor: BandrewCloud
+License ID: BC-203448-2026
+License Type: Proprietary
+Authorized User: BandrewDev
+Authorized Organization: BandrewCloud / BandrewPay
+Authorized Device(s): BandrewCloud Servers
+Maximum Installations: Unlimited
+Maximum Concurrent Instances: Unlimited
+Issue Date: 26 August 2026
+Expiration Date: PERPETUAL
 
-## LICENSE INFORMATION
-
-**Software:** BandrewPay - Payemnt
-
-**Licensor:** BandrewCloud
-
-**License ID:** BC-203448-2026
-
-**License Type:** Proprietary
-
-**Authorized User:** BandrewDev
-
-**Authorized Organization:** BandrewCloud / BandrewPay
-
-**Authorized Device(s):** BandrewCloud Servers
-
-**Maximum Installations:** Unlimited
-
-**Maximum Concurrent Instances:** Unlimited
-
-**Issue Date:** 26 August 2026
-
-**Expiration Date:** PERPETUAL
-
----
-
-## COPYRIGHT NOTICE
-
+COPYRIGHT NOTICE
 © 2026 BandrewCloud. All rights reserved.
-
 This Software, including its source code, object code, architecture, algorithms, interfaces, documentation, and associated materials, is proprietary and confidential unless expressly stated otherwise.
-
 Unauthorized copying, distribution, modification, reverse engineering, circumvention, resale, sublicensing, or other unauthorized use is strictly prohibited to the maximum extent permitted by applicable law.
+END OF AGREEMENT
 
-**END OF AGREEMENT**
