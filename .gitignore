@@ -130,7 +130,7 @@ secrets/
 opencode.json
 reference/
 
-# --- 11. State lokal AI tools (selain .opencode yang memang disengaja) --------
+# --- 11. State lokal AI tools  --------
 .claude/
 .windsurf/
 .aider*
