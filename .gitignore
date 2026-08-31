@@ -1,5 +1,5 @@
 # =============================================================================
-# BandrewPay / GoPay Merchant Gateway - .gitignore (security-hardened)
+# TEMPLATE - .gitignore (security-hardened)
 # -----------------------------------------------------------------------------
 # Prinsip:
 #   1. SECRET TIDAK PERNAH masuk git (.env, sesi/token GoBiz, kunci, cache).
@@ -139,10 +139,3 @@ reference/
 AGENTS.md
 Payment-ui/
 
-# --- 12. Catatan --------------------------------------------------------------
-# sengaja TIDAK di-ignore:
-#   .env.example        -> template config, bebas secret
-#   platform/src/db/schema.*.sql -> migrasi database (WAJIB ter-track)
-#   package-lock.json   -> integrity dependency
-#   next-env.d.ts       -> bagian normal project Next.js
-#   .opencode/skills/   -> dokumentasi agent (aset project)
